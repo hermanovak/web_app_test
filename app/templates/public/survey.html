@@ -1,0 +1,42 @@
+{% extends "public/templates/public_template.html" %}
+
+{%block title %}Survey{%endblock %}
+
+{% block main %}
+
+<div class="container">
+    <div class ="row">
+        <div class="col">
+            
+            <h1>Survey</h1>
+            <hr>
+            
+            <form action="{{ url_for('questionnaire1') }}" method="post" autocomplete="off">
+                <table style="width:100%">
+                <tr>
+                <td>{{ data.question1 }}</td>
+                <td style="text-align:right">
+                    <label for="Q001"></label>
+                        <input type="text" name="Q001" placeholder="Q001" id="Q001" required></td>
+                </tr>
+                <tr>
+                <td>{{ data.question2 }}</td>
+                <td style="text-align:right">
+                    <label for="Q002"></label>
+                        <input type="text" name="Q002" placeholder="Q002" id="Q002" required></td>
+                <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                </tr>
+                </table>
+                    <br>
+                    <div class="msg">{{ msg }}</div>
+                    <input type="submit" value="Next">
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock %}
